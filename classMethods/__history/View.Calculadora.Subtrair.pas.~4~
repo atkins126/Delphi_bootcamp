@@ -1,0 +1,31 @@
+unit View.Calculadora.Subtrair;
+
+interface
+
+uses
+  View.CalculadoraInterface;
+
+type
+
+  TCalculadoraSub = class(TInterfacedObject, iCalculadora)
+    private
+    public
+      class function New: iCalculadora;
+      function Calcular(A, B: Double): Double;
+  end;
+
+implementation
+
+{ TCalculadoraSub }
+
+function TCalculadoraSub.Calcular(A, B: Double): Double;
+begin
+  Result := A - B;
+end;
+
+class function TCalculadoraSub.New: iCalculadora;
+begin
+  Result := Self.Create;
+end;
+
+end.

@@ -1,0 +1,17 @@
+unit View.CalculadoraInterface;
+
+interface
+
+uses
+  System.SysUtils;
+
+type
+  iCalculadora = interface
+    ['{C7077E63-CC43-491D-84A6-E9E8513A8924}']
+    function Calcular (A, B : Double): Double;
+    function Display(aValue: TProc<String>): String;
+  end;
+
+implementation
+
+end.
