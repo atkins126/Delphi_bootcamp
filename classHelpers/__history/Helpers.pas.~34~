@@ -1,0 +1,54 @@
+unit Helpers;
+
+interface
+uses
+  Vcl.StdCtrls, Pessoa;
+
+type
+
+  TEnumPessoa = (tpFisica, tpJuridica);
+
+  TEnumPessoaHelper = record helper for TEnumPessoa
+    function This: iPessoa;
+  end;
+
+
+  TEditHelper = class helper for TEdit
+    function ToInteger: Integer;
+    procedure ToText(aValue: Integer);
+    procedure TextCurrBr(aValue: Currency);
+  end;
+
+implementation
+
+uses
+  System.SysUtils;
+
+{ THelpers }
+
+procedure TEditHelper.TextCurrBr(aValue: Currency);
+begin
+  Self.Text := FormatCurr('R$ #,##0.00', aValue);
+end;
+
+function TEditHelper.ToInteger: Integer;
+begin
+  Result := StrToInt(Self.Text);
+end;
+
+procedure TEditHelper.ToText(aValue: Integer);
+begin
+  Self.Text := IntToStr(aValue);
+end;
+
+{ TEnumPessoaHelper }
+
+function TEnumPessoaHelper.This: iPessoa;
+begin
+  case Self of
+    tpFisica: ;
+    tpJuridica: ;
+  end;
+end;
+
+end.

@@ -1,0 +1,38 @@
+unit Helpers;
+
+interface
+
+uses
+  Vcl.StdCtrls;
+
+type
+
+  TEditHelpers = class helper for TEdit
+    function toInteger: Integer;
+    procedure toText (aValue : Integer);
+    procedure currToBrl(aValue : Integer);
+  end;
+
+implementation
+
+uses
+  System.SysUtils;
+
+{ TEditHelpers }
+
+procedure TEditHelpers.currToBrl(aValue: Integer);
+begin
+  Self.Text := FormatCurr('R$ #.##0.00', aValue);
+end;
+
+function TEditHelpers.toInteger: Integer;
+begin
+  Result := StrToInt(Self.Text);
+end;
+
+procedure TEditHelpers.toText(aValue: Integer);
+begin
+  Self.Text := IntToStr(aValue);
+end;
+
+end.

@@ -1,0 +1,27 @@
+unit Pessoa;
+
+interface
+
+type
+  iPessoa = interface
+    function Nome: String;
+  end;
+
+  TPessoaFisica = class(TInterfacedObject, iPessoa)
+    function Nome: String;
+  end;
+
+  TPessoaJuridica = class(TInterfacedObject, iPessoa)
+    function Nome: String;
+  end;
+
+implementation
+
+{ TPessoaJuridica }
+
+function TPessoaJuridica.Nome: String;
+begin
+  Result := 'Pessoa Jurídica';
+end;
+
+end.

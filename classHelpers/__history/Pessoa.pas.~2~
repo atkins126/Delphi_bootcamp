@@ -1,0 +1,11 @@
+unit Pessoa;
+
+interface
+
+  TPessoaFisica = class
+
+  end;
+
+implementation
+
+end.
