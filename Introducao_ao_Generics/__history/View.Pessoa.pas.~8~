@@ -1,0 +1,45 @@
+unit View.Pessoa;
+
+interface
+type
+
+  TPlanoSaude = class
+    private
+    FNum: Integer;
+    procedure SetNum(const Value: Integer);
+    public
+      property Num : Integer read FNum write SetNum;
+  end;
+
+  TEndereco = class
+    private
+    public
+      //property
+  end;
+
+  TPessoa<T> = class
+    private
+    public
+      function Tipo (aValue : T) : T;
+  end;
+
+implementation
+
+{ TPessoa<T> }
+
+function TPessoa<T>.Tipo(aValue: T): T;
+begin
+
+end;
+
+{ TPlanoSaude }
+
+
+{ TPlanoSaude }
+
+procedure TPlanoSaude.SetNum(const Value: Integer);
+begin
+  FNum := Value;
+end;
+
+end.

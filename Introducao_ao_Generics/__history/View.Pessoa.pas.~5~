@@ -1,0 +1,25 @@
+unit View.Pessoa;
+
+interface
+type
+
+  TPlanoSaude = class
+
+  end;
+
+  TPessoa<T> = class
+    private
+    public
+      function Tipo (aValue : T) : T;
+  end;
+
+implementation
+
+{ TPessoa<T> }
+
+function TPessoa<T>.Tipo(aValue: T): T;
+begin
+  Return := aValue;
+end;
+
+end.
