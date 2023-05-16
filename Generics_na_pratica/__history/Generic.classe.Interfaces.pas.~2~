@@ -1,0 +1,21 @@
+unit Generic.classe.Interfaces;
+
+interface
+
+type
+
+  iPessoa = interface
+    ['{1835794C-8662-4051-B405-CAC5F9B0DACA}']
+    function Nome (aValue: String): TPessoa;
+    function Params : TPessoaParam<TPessoa>;
+    function Cadastro : String;
+  end;
+
+  iEmpresa = interface
+    ['{FB2353D0-D065-4040-B52D-35C59065FBCB}']
+  end;
+
+
+implementation
+
+end.
