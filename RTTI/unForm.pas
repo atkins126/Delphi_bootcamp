@@ -34,9 +34,12 @@ type
     procedure Button4Click(Sender: TObject);
     procedure Button5Click(Sender: TObject);
   private
+    FJson: String;
+    procedure SetJson(const Value: String);
     { Private declarations }
   public
     { Public declarations }
+    property Json: String read FJson write SetJson;
   end;
 
 var
@@ -112,6 +115,7 @@ begin
   try
     TRttiUtils.formToJson(Self, aJson);
     Memo1.Lines.add(aJson.ToString);
+    SetJson(aJson.ToString);
   finally
     aJson.Free;
   end;
@@ -119,7 +123,12 @@ end;
 
 procedure TForm1.Button5Click(Sender: TObject);
 begin
-  //
+  TRttiUtils.JsonToForm(Self, FJson);
+end;
+
+procedure TForm1.SetJson(const Value: String);
+begin
+  FJson := Value;
 end;
 
 end.
