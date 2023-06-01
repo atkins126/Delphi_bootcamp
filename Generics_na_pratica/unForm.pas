@@ -15,7 +15,6 @@ type
     procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
-    procedure ExibirResultado ( aValue: String );
   public
     { Public declarations }
   end;
@@ -32,39 +31,30 @@ uses
 
 procedure TForm1.Button1Click(Sender: TObject);
 begin
-  TPessoa
-    .New
-    .Nome('Guilherme G.')
+  ShowMessage(
+    TPessoa.New
+    .Nome('Guilherme')
     .Params
-      .Telefone('(10) 908665473')
+      .Telefone('(11)000000000')
       .Endereco('Rua x')
-      .CEP('03374-080')
-      .Numero(238)
-      .PlanoSaude('xxx')
-      .Display(ExibirResultado)
+      .CEP('03333-000')
       .&End
-      .Cadastro;
+    .Cadastro
+  );
 end;
 
 procedure TForm1.Button2Click(Sender: TObject);
 begin
-    TEmpresa
-    .New
-    .RazaoSocial('ApSomar')
+  ShowMessage(
+    TEmpresa.New
+    .RazaoSocial('ApsOmar')
     .Params
-      .Telefone('(15) 968715487')
-      .Endereco('Rua y')
-      .CEP('05081-604')
-      .Numero(18)
-      .PlanoSaude('yyy')
-      .Display(ExibirResultado)
+      .Telefone('(11)000000000')
+      .Endereco('Rua x')
+      .CEP('03333-000')
       .&End
-      .Cadastro;
-end;
-
-procedure TForm1.ExibirResultado(aValue: String);
-begin
-  ShowMessage(aValue);
+    .Cadastro
+  );
 end;
 
 procedure TForm1.FormCreate(Sender: TObject);

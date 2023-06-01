@@ -3,25 +3,24 @@ unit Generic.Classe.Pessoa;
 interface
 
 uses
-  Generic.Classe.Pessoa.Params, Generic.classe.Interfaces;
+  Generic.classe.Interfaces, Generic.Classe.Pessoa.Params;
 
 type
-   TPessoa = class(TInterfacedObject, iPessoa<TPessoa>)
-    private
-      FNome: String;
-      FParam: TPessoaParam<TPessoa>;
-    public
-      constructor Create;
-      destructor Destroy; override;
-      class function New : iPessoa<TPessoa>;
-      function Nome (aValue: String): iPessoa<TPessoa>;
-      function Params : TPessoaParam<TPessoa>;
-      function Cadastro : String;
-  end;
-implementation
 
-uses
-  System.SysUtils;
+  TPessoa = class(TInterfacedObject, iPessoa<TPessoa>)
+  private
+    FNome: String;
+    FParams: TParams<TPessoa>;
+  public
+    constructor Create;
+    destructor Destroy; override;
+    class function New : iPessoa<TPessoa>;
+    function Nome ( aValue : String ): iPessoa<TPessoa>;
+    function Params : TParams<TPessoa>;
+    function Cadastro: String;
+  end;
+
+implementation
 
 { TPessoa }
 
@@ -29,25 +28,19 @@ function TPessoa.Cadastro: String;
 begin
   Result :=
     FNome + ' - ' +
-    FParam.Telefone + ' - ' +
-    FParam.Endereco + ' - ' +
-    FParam.CEP + ' - ' +
-    intToStr(FParam.Numero) + ' - ' +
-    FParam.PlanoSaude;
-
-    if Assigned (FParam.Display()) then
-      FParam.Display()(result);
-
+    FParams.Telefone + ' - ' +
+    FParams.Endereco + ' - ' +
+    FParams.CEP;
 end;
 
 constructor TPessoa.Create;
 begin
-  FParam := TPessoaParam<TPessoa>.Create(Self);
+  FParams := TParams<TPessoa>.Create(Self);
 end;
 
 destructor TPessoa.Destroy;
 begin
-  FParam.Free;
+  FParams.Free;
   inherited;
 end;
 
@@ -62,9 +55,9 @@ begin
   FNome := aValue;
 end;
 
-function TPessoa.Params: TPessoaParam<TPessoa>;
+function TPessoa.Params: TParams<TPessoa>;
 begin
-  Result := FParam;
+  Result := FParams;
 end;
 
 end.

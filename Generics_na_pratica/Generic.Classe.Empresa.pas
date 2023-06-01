@@ -3,29 +3,26 @@ unit Generic.Classe.Empresa;
 interface
 
 uses
-  Generic.Classe.Pessoa.Params, Generic.classe.Interfaces;
+  Generic.classe.Interfaces, Generic.Classe.Pessoa.Params;
 
 type
 
   TEmpresa = class(TInterfacedObject, iEmpresa<TEmpresa>)
-    private
-      FRazaoSocial: String;
-      FParam : TPessoaParam<TEmpresa>;
-    public
-      constructor Create;
-      destructor Destroy; override;
-      class function New : iEmpresa<TEmpresa>;
-      function RazaoSocial (aValue: String): iEmpresa<TEmpresa>;
-      function Params : TPessoaParam<TEmpresa>;
-      function Cadastro: String;
+  private
+    FRazaoSocial : String;
+    FParam : TParams<TEmpresa>;
+  public
+    constructor Create;
+    destructor Destroy; override;
+    class function New : iEmpresa<TEmpresa>;
+    function RazaoSocial ( aValue : String ): iEmpresa<TEmpresa>;
+    function Params : TParams<TEmpresa>;
+    function Cadastro: String;
   end;
 
 implementation
 
-uses
-  System.SysUtils;
-
- { TEmpresa }
+{ TEmpresa }
 
 function TEmpresa.Cadastro: String;
 begin
@@ -33,18 +30,12 @@ begin
     FRazaoSocial + ' - ' +
     FParam.Telefone + ' - ' +
     FParam.Endereco + ' - ' +
-    FParam.CEP + ' - ' +
-    intToStr(FParam.Numero) + ' - ' +
-    FParam.PlanoSaude;
-
-    if Assigned (FParam.Display()) then
-      FParam.Display()(result);
-
+    FParam.CEP;
 end;
 
 constructor TEmpresa.Create;
 begin
-  FParam := TPessoaParam<TEmpresa>.Create(Self);
+  FParam := TParams<TEmpresa>.Create(Self);
 end;
 
 destructor TEmpresa.Destroy;
@@ -55,15 +46,15 @@ end;
 
 class function TEmpresa.New: iEmpresa<TEmpresa>;
 begin
-  result := Self.Create;
+  Result := Self.Create;
 end;
 
-function TEmpresa.Params: TPessoaParam<TEmpresa>;
+function TEmpresa.Params: TParams<TEmpresa>;
 begin
   Result := FParam;
 end;
 
-function TEmpresa.RazaoSocial (aValue: String): iEmpresa<TEmpresa>;
+function TEmpresa.RazaoSocial(aValue: String): iEmpresa<TEmpresa>;
 begin
   Result := Self;
   FRazaoSocial := aValue;

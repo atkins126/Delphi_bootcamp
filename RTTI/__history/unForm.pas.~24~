@@ -1,0 +1,95 @@
+unit unForm;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, System.Rtti;
+
+type
+  TForm1 = class(TForm)
+    Button1: TButton;
+    Button2: TButton;
+    Button3: TButton;
+    Button4: TButton;
+    Edit1: TEdit;
+    Edit2: TEdit;
+    Edit3: TEdit;
+    Edit4: TEdit;
+    Memo1: TMemo;
+    Button5: TButton;
+    procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.Button1Click(Sender: TObject);
+var
+  _Context : TRttiContext;
+  _Type : TRttiType;
+  _Property : TRttiProperty;
+begin
+  _Context := TRttiContext.Create;
+  try
+    _Type := _Context.GetType(Self.ClassType);
+    for _Property in _Type.GetProperties do
+      Memo1.Lines.Add(_Property.name + ' : ' + _Property.GetValue(Self).ToString);
+  finally
+    _Context.Free;
+  end;
+end;
+
+procedure TForm1.Button2Click(Sender: TObject);
+var
+  _Context : TRttiContext;
+  _Type : TRttiType;
+  _Field : TRttiField;
+  Edit : TEdit;
+begin
+  _Context := TRttiContext.Create;
+  try
+    _Type := _Context.GetType(Self.ClassType);
+    for _Field in _Type.GetFields do
+    begin
+      if _Field.Name = 'Edit1' then
+      begin
+        Edit := Self.FindComponent(_Field.Name) as TEdit;
+        Memo1.Lines.Add(Edit.Text);
+      end;
+    end;
+  finally
+
+  end;
+end;
+
+procedure TForm1.Button3Click(Sender: TObject);
+var
+  _Context : TRttiContext;
+  _Type : TRttiType;
+  _Field : TRttiField;
+  Edit : TEdit;
+begin
+  _Context := TRttiContext.Create;
+  _Type := _Context.GetType(Self.ClassType);
+  for _Field in _Type.GetFields do
+  begin
+    if _Field.Name = 'Edit1' then
+    begin
+      Edit := Self.FindComponent(_Field.Name) as TEdit;
+      Edit.Text := Edit2.Text;
+    end;
+  end;
+end;
+
+end.

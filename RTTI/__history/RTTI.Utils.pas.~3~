@@ -1,0 +1,24 @@
+unit RTTI.Utils;
+
+interface
+
+uses
+  Vcl.Forms, System.JSON;
+
+type
+  TRTTIUtils = class
+    private
+    public
+      class procedure formToJson ( aForm: TForm; var aResult : TJsonObject );
+  end;
+
+implementation
+
+{ TRTTIUtils }
+
+class procedure TRTTIUtils.formToJson(aForm: TForm; var aResult: TJsonObject);
+begin
+  //
+end;
+
+end.

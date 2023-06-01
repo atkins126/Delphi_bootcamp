@@ -1,0 +1,42 @@
+unit RTTI.Utils;
+
+interface
+
+uses
+  Vcl.Forms, System.JSON, System.Rtti;
+
+type
+  TRTTIUtils = class
+    private
+    public
+      class procedure formToJson ( aForm: TForm; var aResult : TJsonObject );
+  end;
+
+implementation
+
+
+{ TRTTIUtils }
+
+class procedure TRTTIUtils.formToJson(aForm: TForm; var aResult: TJsonObject);
+var
+  _Context : TRttiContext;
+  _Type : TRttiType;
+  _Field : TRttiField;
+  _Attr : TCustomAttribute;
+begin
+  _Context := TRttiContext.Create;
+  try
+    _Type := _Context.GetType(aForm.ClassType);
+    for _Field in _Type.GetFields do
+    begin
+      for _Attr in _Field.GetAttributes do
+      begin
+
+      end;
+    end;
+  finally
+
+  end;
+end;
+
+end.

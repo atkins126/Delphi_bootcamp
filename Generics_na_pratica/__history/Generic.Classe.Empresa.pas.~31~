@@ -1,0 +1,49 @@
+unit Generic.Classe.Empresa;
+
+interface
+
+uses
+  Generic.classe.Interfaces, Generic.Classe.Pessoa.Params;
+
+type
+
+  TEmpresa = class(TInterfacedObject, iEmpresa<TEmpresa>)
+  private
+    FRazaoSocial : String;
+    FParam : TParams<TEmpresa>;
+  public
+    class function New : iPessoa<TEmpresa>;
+    function RazaoSocial ( aValue : String ): iEmpresa<TEmpresa>;
+    function Params : TParams<TEmpresa>;
+    function Cadastro: String;
+  end;
+
+implementation
+
+{ TEmpresa }
+
+function TEmpresa.Cadastro: String;
+begin
+  Result :=
+    TEmpresa.New
+      .Razao
+
+end;
+
+class function TEmpresa.New: iPessoa<TEmpresa>;
+begin
+  Result := Self.Create;
+end;
+
+function TEmpresa.Params: TParams<TEmpresa>;
+begin
+
+end;
+
+function TEmpresa.RazaoSocial(aValue: String): iEmpresa<TEmpresa>;
+begin
+  Result := Self;
+  FRazaoSocial := aValue;
+end;
+
+end.
