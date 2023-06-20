@@ -17,9 +17,10 @@ object Form1: TForm1
   object Label1: TLabel
     Left = 136
     Top = 80
-    Width = 49
-    Height = 24
+    Width = 31
+    Height = 13
     Caption = 'Label1'
+    Visible = False
   end
   object Edit1: TEdit
     Left = 136

@@ -78,9 +78,12 @@ begin
   TValidation.New
   .NotNull
     .Component(Edit1)
-    .ColorDanger
+    .ColorDanger(clRed)
     .DisplayComponent(Label1)
     .DisplayMsgError('Edit1 não pode ser vazio');
+
+
+    ReportMemoryLeaksOnShutdown := True;
 
 end;
 

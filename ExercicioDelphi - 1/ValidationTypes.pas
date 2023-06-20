@@ -3,7 +3,7 @@ unit ValidationTypes;
 interface
 
 uses
-  System.SysUtils, Vcl.StdCtrls, System.Classes;
+  System.SysUtils, Vcl.StdCtrls, System.Classes, System.UITypes, RTTI.Utils;
 
 type
 
@@ -11,10 +11,9 @@ type
     private
       FProc : TProc<TObject>;
     public
-      constructor Create ( Owner : TComponent; Proc : TProc<TObject>);
+      constructor Create ( Owner : TComponent; Proc : TProc<TObject> );
     published
       procedure Event ( Sender : TObject );
-      class function AnonProcToNotifyEvent ( Owner : TComponent; Proc : TProc<TObject> ): TNotifyEvent;
   end;
 
   TNotNull<T : class> = class
@@ -22,13 +21,15 @@ type
       FParent : T;
       FComponent : TEdit;
       FDisplay : TLabel;
+      FColor : Integer;
     public
       constructor Create ( aParent : T );
       function Component ( aValue : TEdit ) : TNotNull<T>;
-      function ColorDanger : TNotNull<T>;
+      function ColorDanger ( aColor : Integer ) : TNotNull<T>;
       function DisplayComponent (aDisplay : TLabel ): TNotNull<T>;
       function DisplayMsgError ( aMsg : String ) : TNotNull<T>;
       function &End : T;
+      function AnonProc2NotifyEvent(Owner : TComponent ; aProc: TProc<TObject> ): TNotifyEvent;
   end;
 
   TMinLength<T : class> = class
@@ -114,10 +115,15 @@ end;
 
 { TNotNull<T> }
 
-function TNotNull<T>.ColorDanger : TNotNull<T>;
+function TNotNull<T>.AnonProc2NotifyEvent(Owner : TComponent ; aProc: TProc<TObject>): TNotifyEvent;
+begin
+  Result := TNotifyEventWrapper.Create(Owner, aProc).Event;
+end;
+
+function TNotNull<T>.ColorDanger ( aColor : Integer ) : TNotNull<T>;
 begin
    Result := Self;
-   FComponent.Color := clRed;
+   FColor := aColor;
 end;
 
 function TNotNull<T>.Component(aValue: TEdit): TNotNull<T>;
@@ -143,28 +149,33 @@ end;
 
 function TNotNull<T>.DisplayMsgError(aMsg: String): TNotNull<T>;
 begin
-    FComponent.OnChange := TNotifyEventWrapper.AnonProcToNotifyEvent(FComponent,
+
+    TRttiUtils.AttachEventOnTEdit(FComponent);
+
+    FComponent.OnChange := AnonProc2NotifyEvent(FComponent,
       procedure (Sender : TObject)
       begin
-        if Length(Trim(FComponent.Text)) > 0 then
-        begin
-          FComponent.Color := clWhite;
-          FDisplay.Visible := False;
-        end;
+//        if Length(Trim(FComponent.Text)) > 0 then
+//        begin
+//          FComponent.Color := clWhite;
+//          FDisplay.Visible := False;
+//        end;
       end
     );
-    FComponent.OnExit := TNotifyEventWrapper.AnonProcToNotifyEvent(FComponent,
+    FComponent.OnExit := AnonProc2NotifyEvent(FComponent,
       procedure (Sender : TObject)
       begin
-        if Trim(FComponent.Text) = '' then
-        begin
-          FComponent.Color := clRed;
-          FComponent.SetFocus;
-          FDisplay.Visible := True;
-          FDisplay.Caption := 'Edit1 Não pode ser vazio';
-        end;
+//        if Trim(FComponent.Text) = '' then
+//        begin
+          FComponent.Color := FColor;
+//          FComponent.SetFocus;
+//          FDisplay.Visible := True;
+//          FDisplay.Caption := 'Edit1 Não pode ser vazio';
+          ShowMessage('bbbbb');
+//        end;
       end
     );
+
 end;
 
 function TNotNull<T>.&End: T;
@@ -173,12 +184,6 @@ begin
 end;
 
 { TNotifyEventWrapper }
-
-class function TNotifyEventWrapper.AnonProcToNotifyEvent(Owner: TComponent;
-  Proc: TProc<TObject>): TNotifyEvent;
-begin
-  Result := TNotifyEventWrapper.Create(Owner, Proc).Event;
-end;
 
 constructor TNotifyEventWrapper.Create(Owner: TComponent; Proc: TProc<TObject>);
 begin
