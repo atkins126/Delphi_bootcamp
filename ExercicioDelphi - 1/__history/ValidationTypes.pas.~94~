@@ -27,7 +27,7 @@ type
       function Component ( aValue : TEdit ) : TNotNull<T>;
       function ColorDanger ( aColor : Integer ) : TNotNull<T>;
       function DisplayComponent ( aDisplay : TLabel ): TNotNull<T>;
-      function DisplayMsgError ( aMsg : String ; aEdit : TEdit ) : TNotNull<T>;
+      function DisplayMsgError ( aMsg : String ; aEdit : TEdit; aLabel : TLabel ) : TNotNull<T>;
       function &End : T;
       function AnonProc2NotifyEvent(Owner : TComponent ; aProc: TProc<TObject> ): TNotifyEvent;
   end;
@@ -142,7 +142,7 @@ begin
   FLabel := aDisplay;
 end;
 
-function TNotNull<T>.DisplayMsgError(aMsg: String; aEdit : TEdit): TNotNull<T>;
+function TNotNull<T>.DisplayMsgError( aMsg: String; aEdit : TEdit; aLabel : TLabel ): TNotNull<T>;
 begin
 
     FComponent.OnChange := AnonProc2NotifyEvent(FComponent,
@@ -150,9 +150,8 @@ begin
       begin
         if Length(Trim(aEdit.Text)) > 0 then
         begin
-          aEdit.Color := clRed;
-//          FLabel.Visible := False;
-          ShowMessage('123');
+          aEdit.Color := clWhite;
+          aLabel.Visible := False;
         end;
       end
     );
@@ -161,10 +160,10 @@ begin
       begin
         if Trim(aEdit.Text) = '' then
         begin
-          aEdit.Color := FColor;
+          aEdit.Color := clRed;
           aEdit.SetFocus;
-          FLabel.Visible := True;
-          FLabel.Caption := aMsg;
+          aLabel.Visible := True;
+          aLabel.Caption := aMsg;
         end;
       end
     );

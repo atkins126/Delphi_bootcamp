@@ -2,16 +2,16 @@
 <BorlandProject>
 	<Transactions>
     <Transaction>2023/06/16 09:33:46.000.804,=C:\Users\guide\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2023/06/16 09:42:04.857,=C:\Users\guide\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2023/06/16 09:42:58.195,C:\Users\guide\Delphi_bootcamp\ExercicioDelphi - 1\unForm.pas=C:\Users\guide\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2023/06/16 09:42:58.195,C:\Users\guide\Delphi_bootcamp\ExercicioDelphi - 1\unForm.dfm=C:\Users\guide\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
-    <Transaction>2023/06/16 09:44:42.894,=C:\Users\guide\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2023/06/16 09:45:02.837,C:\Users\guide\Delphi_bootcamp\ExercicioDelphi - 1\ValidationUtils.pas=C:\Users\guide\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2023/06/16 09:45:44.541,=C:\Users\guide\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2023/06/16 09:45:55.936,C:\Users\guide\Delphi_bootcamp\ExercicioDelphi - 1\ValidationTypes.pas=C:\Users\guide\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2023/06/16 09:46:15.250,=C:\Users\guide\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2023/06/16 09:46:22.263,C:\Users\guide\Delphi_bootcamp\ExercicioDelphi - 1\interfaces.pas=C:\Users\guide\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2023/06/16 09:47:48.433,C:\Users\guide\Delphi_bootcamp\ExercicioDelphi - 1\Validation.Utils.pas=C:\Users\guide\Delphi_bootcamp\ExercicioDelphi - 1\ValidationUtils.pas</Transaction>
-    <Transaction>2023/06/16 09:48:44.571,C:\Users\guide\Delphi_bootcamp\ExercicioDelphi - 1\exerc.dproj=C:\Users\guide\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2023/06/16 09:42:04.000.857,=C:\Users\guide\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2023/06/16 09:42:58.000.195,C:\Users\guide\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\guide\Delphi_bootcamp\ExercicioDelphi - 1\unForm.pas</Transaction>
+    <Transaction>2023/06/16 09:42:58.000.195,C:\Users\guide\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\guide\Delphi_bootcamp\ExercicioDelphi - 1\unForm.dfm</Transaction>
+    <Transaction>2023/06/16 09:44:42.000.894,=C:\Users\guide\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2023/06/16 09:45:02.000.837,C:\Users\guide\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\guide\Delphi_bootcamp\ExercicioDelphi - 1\ValidationUtils.pas</Transaction>
+    <Transaction>2023/06/16 09:45:44.000.541,=C:\Users\guide\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2023/06/16 09:45:55.000.936,C:\Users\guide\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\guide\Delphi_bootcamp\ExercicioDelphi - 1\ValidationTypes.pas</Transaction>
+    <Transaction>2023/06/16 09:46:15.000.250,=C:\Users\guide\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2023/06/16 09:46:22.000.263,C:\Users\guide\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\guide\Delphi_bootcamp\ExercicioDelphi - 1\interfaces.pas</Transaction>
+    <Transaction>2023/06/16 09:47:48.000.433,C:\Users\guide\Delphi_bootcamp\ExercicioDelphi - 1\ValidationUtils.pas=C:\Users\guide\Delphi_bootcamp\ExercicioDelphi - 1\Validation.Utils.pas</Transaction>
+    <Transaction>2023/06/16 09:48:44.000.571,C:\Users\guide\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\guide\Delphi_bootcamp\ExercicioDelphi - 1\exerc.dproj</Transaction>
   </Transactions>
 </BorlandProject>

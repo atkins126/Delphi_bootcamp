@@ -139,34 +139,37 @@ end;
 
 function TNotNull<T>.DisplayComponent( aDisplay: TLabel ): TNotNull<T>;
 begin
+  Result := Self;
   FLabel := aDisplay;
 end;
 
 function TNotNull<T>.DisplayMsgError( aMsg: String; aEdit : TEdit; aLabel : TLabel ): TNotNull<T>;
 begin
 
-    FComponent.OnChange := AnonProc2NotifyEvent(FComponent,
-      procedure (Sender : TObject)
+  Result := Self;
+
+  FComponent.OnChange := AnonProc2NotifyEvent(FComponent,
+    procedure (Sender : TObject)
+    begin
+      if Length(Trim(aEdit.Text)) > 0 then
       begin
-        if Length(Trim(aEdit.Text)) > 0 then
-        begin
-          aEdit.Color := clWhite;
-          aLabel.Visible := False;
-        end;
-      end
-    );
-    FComponent.OnExit := AnonProc2NotifyEvent(FComponent,
-      procedure (Sender : TObject)
+        aEdit.Color := clWhite;
+        aLabel.Visible := False;
+      end;
+    end
+  );
+  FComponent.OnExit := AnonProc2NotifyEvent(FComponent,
+    procedure (Sender : TObject)
+    begin
+      if Trim(aEdit.Text) = '' then
       begin
-        if Trim(aEdit.Text) = '' then
-        begin
-          aEdit.Color := clRed;
-          aEdit.SetFocus;
-          aLabel.Visible := True;
-          aLabel.Caption := aMsg;
-        end;
-      end
-    );
+        aEdit.Color := clRed;
+        aEdit.SetFocus;
+        aLabel.Visible := True;
+        aLabel.Caption := aMsg;
+      end;
+    end
+  );
 
 end;
 
