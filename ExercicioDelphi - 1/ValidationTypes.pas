@@ -20,14 +20,14 @@ type
     private
       FParent : T;
       FComponent : TEdit;
-      FDisplay : TLabel;
+      FLabel : TLabel;
       FColor : Integer;
     public
       constructor Create ( aParent : T );
       function Component ( aValue : TEdit ) : TNotNull<T>;
       function ColorDanger ( aColor : Integer ) : TNotNull<T>;
-      function DisplayComponent (aDisplay : TLabel ): TNotNull<T>;
-      function DisplayMsgError ( aMsg : String ) : TNotNull<T>;
+      function DisplayComponent ( aDisplay : TLabel ): TNotNull<T>;
+      function DisplayMsgError ( aMsg : String ; aEdit : TEdit; aLabel : TLabel ) : TNotNull<T>;
       function &End : T;
       function AnonProc2NotifyEvent(Owner : TComponent ; aProc: TProc<TObject> ): TNotifyEvent;
   end;
@@ -128,13 +128,8 @@ end;
 
 function TNotNull<T>.Component(aValue: TEdit): TNotNull<T>;
 begin
-  if aValue is TEdit then
-  begin
-    FComponent := aValue;
-    Result := Self;
-  end
-  else
-    raise Exception.Create('aValue is not a TEdit class (ValidationTypes.pas)');
+  FComponent := aValue;
+  Result := Self;
 end;
 
 constructor TNotNull<T>.Create(aParent: T);
@@ -144,35 +139,32 @@ end;
 
 function TNotNull<T>.DisplayComponent( aDisplay: TLabel ): TNotNull<T>;
 begin
-  FDisplay := aDisplay;
+  FLabel := aDisplay;
 end;
 
-function TNotNull<T>.DisplayMsgError(aMsg: String): TNotNull<T>;
+function TNotNull<T>.DisplayMsgError( aMsg: String; aEdit : TEdit; aLabel : TLabel ): TNotNull<T>;
 begin
-
-    TRttiUtils.AttachEventOnTEdit(FComponent);
 
     FComponent.OnChange := AnonProc2NotifyEvent(FComponent,
       procedure (Sender : TObject)
       begin
-//        if Length(Trim(FComponent.Text)) > 0 then
-//        begin
-//          FComponent.Color := clWhite;
-//          FDisplay.Visible := False;
-//        end;
+        if Length(Trim(aEdit.Text)) > 0 then
+        begin
+          aEdit.Color := clWhite;
+          aLabel.Visible := False;
+        end;
       end
     );
     FComponent.OnExit := AnonProc2NotifyEvent(FComponent,
       procedure (Sender : TObject)
       begin
-//        if Trim(FComponent.Text) = '' then
-//        begin
-          FComponent.Color := FColor;
-//          FComponent.SetFocus;
-//          FDisplay.Visible := True;
-//          FDisplay.Caption := 'Edit1 Não pode ser vazio';
-          ShowMessage('bbbbb');
-//        end;
+        if Trim(aEdit.Text) = '' then
+        begin
+          aEdit.Color := clRed;
+          aEdit.SetFocus;
+          aLabel.Visible := True;
+          aLabel.Caption := aMsg;
+        end;
       end
     );
 

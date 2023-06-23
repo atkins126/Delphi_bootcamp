@@ -11,7 +11,9 @@ type
     Edit1: TEdit;
     Edit2: TEdit;
     Label1: TLabel;
+    Button1: TButton;
     procedure FormCreate(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
   public
@@ -23,16 +25,24 @@ var
 
 implementation
 
+uses
+  Validation.Utils;
+
 {$R *.dfm}
 
 procedure TForm1.FormCreate(Sender: TObject);
 begin
+    ReportMemoryLeaksOnShutdown := True;
+end;
+
+procedure TForm1.FormShow(Sender: TObject);
+begin
     TValidation.New
-  .NotNull
+    .NotNull
     .Component(Edit1)
-    .ColorDanger
+    .ColorDanger(clRed)
     .DisplayComponent(Label1)
-    .DisplayMsgError('Edit1 não pode ser vazio');
+    .DisplayMsgError('Edit1 não pode ser vazio', Edit1);
 end;
 
 end.
