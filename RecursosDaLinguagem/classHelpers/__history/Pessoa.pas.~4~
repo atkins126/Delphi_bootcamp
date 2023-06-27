@@ -1,0 +1,15 @@
+unit Pessoa;
+
+interface
+
+  iPessoa = interface
+    function Nome: String;
+  end;
+
+  TPessoaFisica = class(TInterfacedObject, iPessoa)
+
+  end;
+
+implementation
+
+end.

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2023/05/16 09:32:27.000.169,=C:\Users\guide\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2023/05/16 09:32:46.000.621,C:\Users\guide\Delphi_bootcamp\Generics_na_pratica\unForm.pas=C:\Users\guide\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2023/05/16 09:32:46.000.621,C:\Users\guide\Delphi_bootcamp\Generics_na_pratica\unForm.dfm=C:\Users\guide\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2023/05/16 09:33:06.000.191,C:\Users\guide\Delphi_bootcamp\Generics_na_pratica\genericsNaPratica.dproj=C:\Users\guide\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2023/05/16 09:33:38.000.182,=C:\Users\guide\Delphi_bootcamp\Generics_na_pratica\Unit1.pas</Transaction>
+    <Transaction>2023/05/16 09:33:55.000.137,C:\Users\guide\Delphi_bootcamp\Generics_na_pratica\Unit1.pas=C:\Users\guide\Delphi_bootcamp\Generics_na_pratica\Generic.Classe.Pessoa.pas</Transaction>
+    <Transaction>2023/05/16 09:34:01.000.444,=C:\Users\guide\Delphi_bootcamp\Generics_na_pratica\Unit1.pas</Transaction>
+    <Transaction>2023/05/16 09:34:09.000.764,C:\Users\guide\Delphi_bootcamp\Generics_na_pratica\Unit1.pas=C:\Users\guide\Delphi_bootcamp\Generics_na_pratica\Generic.Classe.Empresa.pas</Transaction>
+    <Transaction>2023/05/16 09:34:19.000.666,=C:\Users\guide\Delphi_bootcamp\Generics_na_pratica\Unit1.pas</Transaction>
+    <Transaction>2023/05/16 09:34:42.000.799,C:\Users\guide\Delphi_bootcamp\Generics_na_pratica\Unit1.pas=C:\Users\guide\Delphi_bootcamp\Generics_na_pratica\Generic.Classe.Pessoa.Params.pas</Transaction>
+    <Transaction>2023/05/16 12:04:08.000.220,=C:\Users\guide\Delphi_bootcamp\Generics_na_pratica\Unit1.pas</Transaction>
+    <Transaction>2023/05/16 12:04:17.000.162,C:\Users\guide\Delphi_bootcamp\Generics_na_pratica\Unit1.pas=C:\Users\guide\Delphi_bootcamp\Generics_na_pratica\Generic.classe.Interfaces.pas</Transaction>
+  </Transactions>
+</BorlandProject>

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2023/05/03 09:45:42.000.431,=C:\Users\ggoncalves.APDATACLOUD\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2023/05/03 10:01:34.000.784,=C:\Users\ggoncalves.APDATACLOUD\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2023/05/03 10:01:48.000.655,C:\Users\ggoncalves.APDATACLOUD\Documents\Embarcadero\Studio\Projects\Unit2.pas=C:\Users\ggoncalves.APDATACLOUD\Desktop\classMethods\View.Calculadora.pas</Transaction>
+    <Transaction>2023/05/03 10:02:05.000.816,C:\Users\ggoncalves.APDATACLOUD\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\ggoncalves.APDATACLOUD\Desktop\classMethods\unForm.dfm</Transaction>
+    <Transaction>2023/05/03 10:02:05.000.816,C:\Users\ggoncalves.APDATACLOUD\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\ggoncalves.APDATACLOUD\Desktop\classMethods\unForm.pas</Transaction>
+    <Transaction>2023/05/03 10:02:17.000.499,C:\Users\ggoncalves.APDATACLOUD\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\ggoncalves.APDATACLOUD\Desktop\classMethods\classMethods.dproj</Transaction>
+    <Transaction>2023/05/03 10:13:21.928,=C:\Users\ggoncalves.APDATACLOUD\Desktop\classMethods\Unit1.pas</Transaction>
+    <Transaction>2023/05/03 10:13:44.214,=C:\Users\ggoncalves.APDATACLOUD\Desktop\classMethods\Unit2.pas</Transaction>
+    <Transaction>2023/05/03 10:14:06.214,C:\Users\ggoncalves.APDATACLOUD\Desktop\classMethods\View.CalculadoraInterface.pas=C:\Users\ggoncalves.APDATACLOUD\Desktop\classMethods\Unit1.pas</Transaction>
+    <Transaction>2023/05/03 10:14:17.918,C:\Users\ggoncalves.APDATACLOUD\Desktop\classMethods\View.Calculadora.Somar.pas=C:\Users\ggoncalves.APDATACLOUD\Desktop\classMethods\Unit2.pas</Transaction>
+    <Transaction>2023/05/03 10:21:32.676,=C:\Users\ggoncalves.APDATACLOUD\Desktop\classMethods\Unit1.pas</Transaction>
+    <Transaction>2023/05/03 10:21:43.822,C:\Users\ggoncalves.APDATACLOUD\Desktop\classMethods\View.Calculadora.Subtrair.pas=C:\Users\ggoncalves.APDATACLOUD\Desktop\classMethods\Unit1.pas</Transaction>
+  </Transactions>
+</BorlandProject>

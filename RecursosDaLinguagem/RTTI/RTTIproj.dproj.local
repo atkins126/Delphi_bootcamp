@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2023/06/01 11:11:43.000.679,=C:\Users\guide\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2023/06/01 11:15:04.000.437,C:\Users\guide\Delphi_bootcamp\RTTI\unForm.pas=C:\Users\guide\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2023/06/01 11:15:04.000.437,C:\Users\guide\Delphi_bootcamp\RTTI\unForm.dfm=C:\Users\guide\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2023/06/01 11:15:10.000.902,C:\Users\guide\Delphi_bootcamp\RTTI\RTTIproj.dproj=C:\Users\guide\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2023/06/01 11:39:03.000.558,=C:\Users\guide\Delphi_bootcamp\RTTI\Unit1.pas</Transaction>
+    <Transaction>2023/06/01 11:39:13.000.554,C:\Users\guide\Delphi_bootcamp\RTTI\RTTI.Utils.pas=C:\Users\guide\Delphi_bootcamp\RTTI\Unit1.pas</Transaction>
+  </Transactions>
+</BorlandProject>

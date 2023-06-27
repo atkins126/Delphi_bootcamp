@@ -1,0 +1,22 @@
+unit View.Calculadora.Subtrair;
+
+interface
+
+type
+
+  TCalculadoraSub = class
+    private
+    public
+      function Subtrair(A, B: Integer): Integer;
+  end;
+
+implementation
+
+{ TCalculadoraSub }
+
+function TCalculadoraSub.Subtrair(A, B: Integer): Integer;
+begin
+  Result := A - B;
+end;
+
+end.

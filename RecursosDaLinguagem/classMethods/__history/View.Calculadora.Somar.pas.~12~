@@ -1,0 +1,50 @@
+unit View.Calculadora.Somar;
+
+interface
+
+uses
+  View.CalculadoraInterface;
+
+type
+
+  TCalculadoraSomar = class(TInterfacedObject, iCalculadora)
+    private
+    public
+      constructor Create;
+      destructor Destroy; override;
+      class function New: iCalculadora;
+      function Calcular(A, B: Double): Double;
+      function Display( aValue : TProc<String> ): iCalculadora;
+  end;
+
+implementation
+
+{ TCalculadoraSomar }
+
+function TCalculadoraSomar.Calcular(A, B: Double): Double;
+begin
+  Result := A + B;
+end;
+
+constructor TCalculadoraSomar.Create;
+begin
+
+end;
+
+destructor TCalculadoraSomar.Destroy;
+begin
+
+  inherited;
+end;
+
+function TCalculadoraSomar.Display(aValue: TProc<String>): iCalculadora;
+begin
+  Result := aValue;
+end;
+
+class function TCalculadoraSomar.New: iCalculadora;
+begin
+  Result := Self.Create;
+end;
+
+end.

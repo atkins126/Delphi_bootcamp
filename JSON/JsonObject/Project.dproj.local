@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2023/06/16 09:33:46.000.804,=C:\Users\guide\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2023/06/23 11:35:18.000.074,=C:\Users\guide\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2023/06/23 11:43:02.000.041,C:\Users\guide\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\guide\Delphi_bootcamp\JSON\JsonObject\unForm.dfm</Transaction>
+    <Transaction>2023/06/23 11:43:02.000.041,C:\Users\guide\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\guide\Delphi_bootcamp\JSON\JsonObject\unForm.pas</Transaction>
+    <Transaction>2023/06/23 12:28:49.000.289,C:\Users\guide\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\guide\Delphi_bootcamp\JSON\JsonObject\Project.dproj</Transaction>
+  </Transactions>
+</BorlandProject>

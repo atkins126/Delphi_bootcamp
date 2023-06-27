@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2023/05/09 10:31:01.000.402,=C:\Users\guide\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2023/05/09 10:41:18.000.512,C:\Users\guide\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\guide\Delphi_bootcamp\classHelpers\unForm.pas</Transaction>
+    <Transaction>2023/05/09 10:41:18.000.512,C:\Users\guide\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\guide\Delphi_bootcamp\classHelpers\unForm.dfm</Transaction>
+    <Transaction>2023/05/09 10:43:45.000.398,=C:\Users\guide\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2023/05/09 10:43:50.000.380,C:\Users\guide\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\guide\Delphi_bootcamp\classHelpers\Helpers.pas</Transaction>
+    <Transaction>2023/05/09 10:47:02.000.939,C:\Users\guide\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\guide\Delphi_bootcamp\classHelpers\classHelpers.dproj</Transaction>
+    <Transaction>2023/05/09 10:53:05.247,=C:\Users\guide\Delphi_bootcamp\classHelpers\Unit1.pas</Transaction>
+    <Transaction>2023/05/09 10:53:13.406,C:\Users\guide\Delphi_bootcamp\classHelpers\View.Pessoa.pas=C:\Users\guide\Delphi_bootcamp\classHelpers\Unit1.pas</Transaction>
+  </Transactions>
+</BorlandProject>

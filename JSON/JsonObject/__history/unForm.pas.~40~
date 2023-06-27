@@ -1,0 +1,110 @@
+unit unForm;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, System.Json;
+
+type
+  TForm1 = class(TForm)
+    Memo1: TMemo;
+    Button1: TButton;
+    Button2: TButton;
+    Memo2: TMemo;
+    Button3: TButton;
+    Button4: TButton;
+    procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
+    procedure Button4Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.Button1Click(Sender: TObject);
+var
+  JsonPessoa : TJSONObject;
+  JsonRefer : TJSONObject;
+begin
+  JsonPessoa := TJsonObject.Create;
+  try
+    JsonPessoa.AddPair('Nome', 'Julio Cesar');
+    JsonPessoa.AddPair('Endereco', 'Rua Comandante');
+    JsonPessoa.AddPair('Numero', TJSONNumber.Create(100));
+    JsonPessoa.AddPair('isValid', TJSONBool.Create(false));
+
+    JsonRefer := TJSONObject.Create;
+    JsonRefer.AddPair('Telefone', '(11)99999-9999');
+
+    JSonPessoa.AddPair('Referencia', JsonRefer);
+
+    Memo1.Text := JsonPessoa.Format(3);
+
+  finally
+    JsonPessoa.Free;
+  end;
+end;
+
+procedure TForm1.Button2Click(Sender: TObject);
+var
+  _Json : TJSONObject;
+begin
+  _Json := TJSONObject.ParseJSONValue(Memo1.Text) as TJsonObject;
+  try
+    _Json.RemovePair('Endereco');
+    Memo2.Text := _Json.Format(3);
+  finally
+    _Json.Free;
+  end;
+end;
+
+procedure TForm1.Button3Click(Sender: TObject);
+var
+  _Json, _JsonRefer : TJSONObject;
+begin
+  _Json := TJSONObject.ParseJSONValue(Memo1.Text) as TJsonObject;
+  try
+    Memo2.Lines.Add('Nome = ' + _Json.GetValue<String>('Nome'));
+    Memo2.Lines.Add('Endereco = ' + _Json.GetValue<String>('Endereco'));
+    Memo2.Lines.Add('Numero = ' + _Json.GetValue<integer>('Numero').ToString);
+
+    _JsonRefer := _Json.GetValue('Referencia') as TJSONObject;
+    Memo2.Lines.Add('Telefone = ' + _JsonRefer.GetValue<String>('Telefone'));
+  finally
+    _Json.Free;
+  end;
+
+end;
+
+procedure TForm1.Button4Click(Sender: TObject);
+var
+  _Json, _JsonRefer : TJSONObject;
+  I : Integer;
+begin
+  _Json := TJSONObject.ParseJSONValue(Memo1.Text) as TJsonObject;
+  try
+    for I := 0 to _Json.Count -1 do
+    begin
+      if _Json.Pairs[I].JsonValue is TJSONObject then
+      begin
+        _JsonRefer := _Json.Pairs[I].JsonValue as TJsonObject;
+      end;
+      Memo2.Lines.Add(_Json.Pairs[I].JsonString.ToString + ' = ' + _Json.Pairs[I].JsonValue.ToString);
+    end;
+  finally
+    _Json.Free;
+  end;
+
+end;
+
+end.

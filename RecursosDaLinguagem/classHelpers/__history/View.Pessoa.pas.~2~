@@ -1,0 +1,13 @@
+unit View.Pessoa;
+
+interface
+
+type
+
+  iPessoa = interface
+    function Nome : String;
+  end;
+
+implementation
+
+end.

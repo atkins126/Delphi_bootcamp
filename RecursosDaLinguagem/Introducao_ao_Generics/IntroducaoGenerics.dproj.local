@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2023/05/11 09:10:20.000.046,=C:\Users\guide\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2023/05/11 09:10:37.000.164,C:\Users\guide\Delphi_bootcamp\Introducao_ao_Generics\unForm.dfm=C:\Users\guide\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2023/05/11 09:10:37.000.164,C:\Users\guide\Delphi_bootcamp\Introducao_ao_Generics\unForm.pas=C:\Users\guide\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2023/05/11 09:43:47.000.838,=C:\Users\guide\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2023/05/11 09:43:53.000.375,C:\Users\guide\Delphi_bootcamp\Introducao_ao_Generics\View.Pessoa.pas=C:\Users\guide\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2023/05/11 10:02:02.000.080,C:\Users\guide\Delphi_bootcamp\Introducao_ao_Generics\IntroducaoGenerics.dproj=C:\Users\guide\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+  </Transactions>
+</BorlandProject>
