@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, System.Json, System.JSON.Writers, System.JSON.Readers,
-  System.JSON.Types;
+  System.JSON.Types, System.JSON.Builders;
 
 type
   TForm1 = class(TForm)
@@ -19,6 +19,8 @@ type
     Button6: TButton;
     Button7: TButton;
     Button8: TButton;
+    Button9: TButton;
+    Button10: TButton;
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
@@ -27,6 +29,8 @@ type
     procedure Button6Click(Sender: TObject);
     procedure Button7Click(Sender: TObject);
     procedure Button8Click(Sender: TObject);
+    procedure Button9Click(Sender: TObject);
+    procedure Button10Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -260,6 +264,91 @@ begin
   finally
     JsonReader.Free;
     StringReader.Free;
+  end;
+end;
+
+procedure TForm1.Button9Click(Sender: TObject);
+var
+  StringWriter : TStringWriter;
+  JsonWriter : TJsonTextWriter;
+  JsonBuilder : TJsonObjectBuilder;
+begin
+  StringWriter := TStringWriter.Create;
+  JsonWriter := TJsonTextWriter.Create(StringWriter);
+  JsonBuilder := TJsonObjectBuilder.Create(JsonWriter);
+  try
+    JsonWriter.Formatting := TJsonFormatting.Indented;
+
+    JsonBuilder
+    .BeginObject
+      .Add('Nome', 'JulioCesar')
+      .Add('Endereco', 'Rua Comandante')
+      .Add('Numero', 100)
+      .Add('isValid', false)
+      .BeginArray('Referencia')
+        .BeginObject
+          .Add('Contato', 'Parente 1')
+          .Add('Telefone', '(12)99999-9999')
+        .EndObject
+        .BeginObject
+          .Add('Contato', 'Parente 2')
+          .Add('Telefone', '(12)99999-9999')
+        .EndObject
+      .EndArray
+    .EndObject;
+
+    Memo1.Lines.Add(StringWriter.ToString);
+
+  finally
+    StringWriter.Free;
+    JsonWriter.Free;
+    JsonBuilder.Free;
+  end;
+end;
+
+procedure TForm1.Button10Click(Sender: TObject);
+var
+  StringWriter : TStringWriter;
+  JsonWriter : TJsonTextWriter;
+  JsonBuilder : TJsonArrayBuilder;
+  ArrayElement : TJSONCollectionBuilder.TElements;
+  I : Integer;
+begin
+  StringWriter := TStringWriter.Create;
+  JsonWriter := TJsonTextWriter.Create(StringWriter);
+  JsonBuilder := TJsonArrayBuilder.Create(JsonWriter);
+  try
+    JsonWriter.Formatting := TJsonFormatting.Indented;
+    ArrayElement := JsonBuilder.BeginArray;
+    for I := 0 to 1 do
+    begin
+      ArrayElement
+        .BeginObject
+          .Add('Nome', 'JulioCesar')
+          .Add('Endereco', 'Rua Comandante')
+          .Add('Numero', 100)
+          .Add('isValid', false)
+          .BeginArray('Referencia')
+            .BeginObject
+              .Add('Contato', 'Parente 1')
+              .Add('Telefone', '(12)99999-9999')
+            .EndObject
+            .BeginObject
+              .Add('Contato', 'Parente 2')
+              .Add('Telefone', '(12)99999-9999')
+            .EndObject
+          .EndArray
+        .EndObject
+    end;
+    ArrayElement
+      .EndArray;
+
+    Memo1.Lines.Add(StringWriter.ToString);
+
+  finally
+    StringWriter.Free;
+    JsonWriter.Free;
+    JsonBuilder.Free;
   end;
 end;
 
