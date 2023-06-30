@@ -16,17 +16,17 @@ object Form1: TForm1
   PixelsPerInch = 96
   TextHeight = 13
   object Memo1: TMemo
-    Left = 424
-    Top = 16
-    Width = 185
-    Height = 177
+    Left = 200
+    Top = 8
+    Width = 321
+    Height = 209
     Lines.Strings = (
       'Memo1')
     TabOrder = 0
   end
   object ComboBox1: TComboBox
-    Left = 232
-    Top = 96
+    Left = 8
+    Top = 8
     Width = 145
     Height = 21
     ItemIndex = 0
@@ -39,27 +39,27 @@ object Form1: TForm1
       'Lucro Real')
   end
   object Edit1: TEdit
-    Left = 24
-    Top = 128
-    Width = 121
-    Height = 21
+    Left = 8
+    Top = 79
+    Width = 145
+    Height = 26
     TabOrder = 2
     Text = '10'
   end
   object Button1: TButton
-    Left = 264
-    Top = 123
-    Width = 75
-    Height = 25
+    Left = 8
+    Top = 35
+    Width = 145
+    Height = 30
     Caption = 'Button1'
     TabOrder = 3
     OnClick = Button1Click
   end
   object Button2: TButton
-    Left = 40
-    Top = 155
-    Width = 75
-    Height = 25
+    Left = 8
+    Top = 111
+    Width = 145
+    Height = 34
     Caption = 'Button2'
     TabOrder = 4
     OnClick = Button2Click

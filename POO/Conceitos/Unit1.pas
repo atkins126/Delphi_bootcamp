@@ -32,7 +32,7 @@ var
 implementation
 
 uses
-  Regras.SimplesNacional, Regras.LucroPresumido, Regras.LucroReal;
+  Regras.SimplesNacional, Regras.LucroPresumido, Regras.LucroReal, Regras.Tipo;
 
 {$R *.dfm}
 
@@ -53,7 +53,7 @@ begin
   if Assigned(FRegra) then
     FRegra.Free;
 
-  FRegra := TRegra(ComboBox1.Items.Objects[ComboBox1.ItemIndex]);
+  FRegra := TEnumRegra(ComboBox1.ItemIndex).this;
 
 end;
 
@@ -61,9 +61,9 @@ procedure TForm1.FormCreate(Sender: TObject);
 begin
   ReportMemoryLeaksOnShutdown := True;
   ComboBox1.Items.Clear;
-  ComboBox1.Items.AddObject('Simples Nacional', TRegraSimplesNacional.Create);
-  ComboBox1.Items.AddObject('Lucro Presumido', TRegraLucroPresumido.Create);
-  ComboBox1.Items.AddObject('Lucro Real', TRegraLucroReal.Create);
+  ComboBox1.Items.Add('Simples Nacional');
+  ComboBox1.Items.Add('Lucro Presumido');
+  ComboBox1.Items.Add('Lucro Real');
 end;
 
 procedure TForm1.FormDestroy(Sender: TObject);
