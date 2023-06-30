@@ -1,0 +1,17 @@
+unit Regras.LucroReal;
+
+interface
+
+uses
+  Regras;
+
+type
+  TRegraLucroPresumido = class(TRegra)
+    private
+    public
+      function Nome : String; override;
+  end;
+
+implementation
+
+end.

@@ -1,0 +1,14 @@
+unit Regras;
+
+interface
+
+type
+  TRegra = class abstract
+    private
+    public
+      function Nome : String; virtual; abstract;
+  end;
+
+implementation
+
+end.

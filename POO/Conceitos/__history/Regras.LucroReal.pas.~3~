@@ -1,0 +1,14 @@
+unit Regras.LucroReal;
+
+interface
+
+type
+  TRegraLucroPresumido = class(TRegra)
+    private
+    public
+
+  end;
+
+implementation
+
+end.

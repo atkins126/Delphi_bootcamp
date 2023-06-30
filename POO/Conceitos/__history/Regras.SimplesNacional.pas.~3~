@@ -1,0 +1,24 @@
+unit Regras.SimplesNacional;
+
+interface
+
+uses
+  Regras;
+
+type
+  TRegraSimplesNacional = class(TRegra)
+    private
+    public
+      function Nome : String; override;
+  end;
+
+implementation
+
+{ TRegraSimplesNacional }
+
+function TRegraSimplesNacional.Nome: String;
+begin
+  Result := 'Simples Nacional';
+end;
+
+end.
