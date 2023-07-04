@@ -3,20 +3,21 @@ unit Regras.Tipo;
 interface
 
 uses
-  Regras, Regras.SimplesNacional, Regras.LucroPresumido, Regras.LucroReal;
+  Regras.SimplesNacional, Regras.LucroPresumido, Regras.LucroReal,
+  Regras.Interfaces;
 
 type
   TEnumRegra = (trSimplesNacional, trPresumido, trReal);
 
   TEnumRegraHelper = record Helper for TEnumRegra
-      function this : TRegra;
+      function this : iRegra;
   end;
 
 implementation
 
 { TEnumRegraHelper }
 
-function TEnumRegraHelper.this: TRegra;
+function TEnumRegraHelper.this: iRegra;
 begin
   case Self of
     trSimplesNacional : Result := TRegraSimplesNacional.Create;

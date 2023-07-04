@@ -1,11 +1,8 @@
 unit Unit1;
-
 interface
-
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Regras;
-
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Regras.Interfaces;
 type
   TForm1 = class(TForm)
     Memo1: TMemo;
@@ -16,65 +13,45 @@ type
     procedure Button1Click(Sender: TObject);
     procedure ComboBox1Change(Sender: TObject);
     procedure FormCreate(Sender: TObject);
-    procedure FormDestroy(Sender: TObject);
     procedure Button2Click(Sender: TObject);
   private
     { Private declarations }
-    FRegra : TRegra;
+    FRegra : iRegra;
+    procedure ExibirResultado ( aValue : String );
   public
     { Public declarations }
-    procedure RecebeRegra ( aValue : TRegra );
+    procedure RecebeRegra ( aValue : iRegra );
   end;
-
 var
   Form1: TForm1;
-
 implementation
-
 uses
-  Regras.SimplesNacional, Regras.LucroPresumido, Regras.LucroReal, Regras.Tipo;
-
+  Regras.SimplesNacional, Regras.LucroPresumido, Regras.LucroReal, Regras.Tipo, Regras.Controller;
 {$R *.dfm}
-
 procedure TForm1.Button1Click(Sender: TObject);
 begin
   RecebeRegra(FRegra);
 end;
-
 procedure TForm1.Button2Click(Sender: TObject);
 begin
-  Memo1.Lines.Add(
-    CurrToStr(FRegra.CalcularImposto(StrToCurr(Edit1.Text)))
-  );
+  FRegra.CalcularImposto(Edit1.Text);
 end;
-
 procedure TForm1.ComboBox1Change(Sender: TObject);
 begin
-  if Assigned(FRegra) then
-    FRegra.Free;
-
-  FRegra := TEnumRegra(ComboBox1.ItemIndex).this;
-
+  FRegra := TEnumRegra(ComboBox1.ItemIndex).this.Display(ExibirResultado);
+end;
+procedure TForm1.ExibirResultado ( aValue : String ) ;
+begin
+  Memo1.Lines.Add(aValue);
 end;
 
 procedure TForm1.FormCreate(Sender: TObject);
 begin
   ReportMemoryLeaksOnShutdown := True;
-  ComboBox1.Items.Clear;
-  ComboBox1.Items.Add('Simples Nacional');
-  ComboBox1.Items.Add('Lucro Presumido');
-  ComboBox1.Items.Add('Lucro Real');
+  TRegraController.New.ListaRegras(ComboBox1.Items);
 end;
-
-procedure TForm1.FormDestroy(Sender: TObject);
-begin
-  if Assigned(FRegra) then
-    FRegra.Free;
-end;
-
-procedure TForm1.RecebeRegra(aValue: TRegra);
+procedure TForm1.RecebeRegra( aValue : iRegra );
 begin
   Memo1.Lines.Add(aValue.Nome);
 end;
-
 end.

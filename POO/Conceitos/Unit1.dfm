@@ -12,7 +12,6 @@ object Form1: TForm1
   Font.Style = []
   OldCreateOrder = False
   OnCreate = FormCreate
-  OnDestroy = FormDestroy
   PixelsPerInch = 96
   TextHeight = 13
   object Memo1: TMemo
@@ -42,7 +41,7 @@ object Form1: TForm1
     Left = 8
     Top = 79
     Width = 145
-    Height = 26
+    Height = 21
     TabOrder = 2
     Text = '10'
   end
